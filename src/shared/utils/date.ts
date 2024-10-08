@@ -1,4 +1,4 @@
-enum DAY {
+enum Day {
   SUNDAY,
   MONDAY,
   TUESDAY,
@@ -8,18 +8,17 @@ enum DAY {
   SATURDAY,
 }
 
-export const DAYS: { [key in DAY]: string } = {
-  [DAY.SUNDAY]: "일요일",
-  [DAY.MONDAY]: "월요일",
-  [DAY.TUESDAY]: "화요일",
-  [DAY.WEDNESDAY]: "수요일",
-  [DAY.THURSDAY]: "목요일",
-  [DAY.FRIDAY]: "금요일",
-  [DAY.SATURDAY]: "토요일",
+export const DAYS: { [key in Day]: string } = {
+  [Day.SUNDAY]: "일요일",
+  [Day.MONDAY]: "월요일",
+  [Day.TUESDAY]: "화요일",
+  [Day.WEDNESDAY]: "수요일",
+  [Day.THURSDAY]: "목요일",
+  [Day.FRIDAY]: "금요일",
+  [Day.SATURDAY]: "토요일",
 };
 
-export function getCalendarDate(month: number) {
-  const year = new Date().getFullYear();
+export function getMaxDate(year: number, month: number) {
   return new Date(year, month, 0).getDate();
 }
 
@@ -27,31 +26,11 @@ export function getDates(size: number) {
   return new Array(size).fill(0).map((_, i) => i + 1);
 }
 
-export function getDay(month: number, date: number) {
-  const year = new Date().getFullYear();
-  const day = new Date(year, month - 1, date).getDay() as DAY;
+export function getDay(year: number, month: number, date: number) {
+  const day = new Date(year, month - 1, date).getDay() as Day;
   return DAYS[day];
 }
 
-export function getCalendarArr(month: number) {
-  return getDates(getCalendarDate(month));
+export function validWeekend(day: string): boolean {
+  return day === DAYS[Day.SUNDAY] || day === DAYS[Day.SATURDAY];
 }
-
-export function isWeekend(month: number, date: number) {
-  const year = new Date().getFullYear();
-  const day = new Date(year, month - 1, date).getDay() as DAY;
-  return day === DAY.SUNDAY || day === DAY.SATURDAY;
-}
-
-(() => {
-  const month = 9;
-  const dates = getCalendarArr(month);
-
-  console.log(
-    dates.map((date) => ({
-      date,
-      day: getDay(month, date),
-      isWeekend: isWeekend(month, date),
-    }))
-  );
-})();
