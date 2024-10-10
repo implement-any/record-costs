@@ -34,3 +34,15 @@ export function getDay(year: number, month: number, date: number) {
 export function validWeekend(day: string): boolean {
   return day === DAYS[Day.SUNDAY] || day === DAYS[Day.SATURDAY];
 }
+
+export function getOptions(year: number, month: number, date: number) {
+  const day = getDay(year, month, date);
+  const isWeekend = validWeekend(day);
+  return { date, day, isWeekend };
+}
+
+export function getCalendar(year: number, month: number) {
+  const maxDate = getMaxDate(year, month);
+  const dates = getDates(maxDate);
+  return dates.map((date) => getOptions(year, month, date));
+}
