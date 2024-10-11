@@ -21,7 +21,7 @@ export function DateCard({
       onClick={onClick}
     >
       <span className={`${module.text} ${isSameDate ? module.mark : ""}`}>
-        {`${date === 1 ? `${month}월 ` : ""}${String(date).padStart(2, "0")}`}일
+        {`${date === 1 ? `${month}월 ` : ""}${date}`}일
       </span>
     </td>
   );
