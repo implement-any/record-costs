@@ -17,7 +17,11 @@ export function DateCard({
 
   return (
     <td
-      className={`${module.card} ${isSameMonth ? (isWeekend ? module.weekend : "") : module.other}`}
+      className={module.card}
+      style={{
+        backgroundColor: isWeekend ? "#282826" : "",
+        color: isSameMonth ? "" : "#9e9e9d",
+      }}
       onClick={onClick}
     >
       <span className={`${module.text} ${isSameDate ? module.mark : ""}`}>
