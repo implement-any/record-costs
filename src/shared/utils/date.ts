@@ -1,4 +1,4 @@
-enum Day {
+export enum Day {
   SUNDAY,
   MONDAY,
   TUESDAY,
@@ -16,6 +16,16 @@ export const DAYS: { [key in Day]: string } = {
   [Day.THURSDAY]: "목요일",
   [Day.FRIDAY]: "금요일",
   [Day.SATURDAY]: "토요일",
+};
+
+export const ABBR_DAYS: { [key in Day]: string } = {
+  [Day.SUNDAY]: "일",
+  [Day.MONDAY]: "월",
+  [Day.TUESDAY]: "화",
+  [Day.WEDNESDAY]: "수",
+  [Day.THURSDAY]: "목",
+  [Day.FRIDAY]: "금",
+  [Day.SATURDAY]: "토",
 };
 
 export class Today {
@@ -65,7 +75,8 @@ export function getThisDates(year: number, month: number) {
 export function getNextDates(year: number, month: number) {
   const maxDate = getMaxDate(year, month);
   const end = new Date(year, month - 1, maxDate).getDay();
-  return getDates(Math.abs(end - 13));
+  const diff = end <= 7 ? 20 : 13;
+  return getDates(Math.abs(end - diff));
 }
 
 export function calendarSlice(calendar: Calendar[], index: number) {

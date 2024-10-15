@@ -1,3 +1,5 @@
+import type { Day } from "@/shared/utils";
+
 export type DateCardProps = {
   year: number;
   month: number;
@@ -6,4 +8,8 @@ export type DateCardProps = {
   isWeekend: boolean;
   isSameDate: boolean;
   isSameMonth: boolean;
+};
+
+export type DateHeaderProps = {
+  day: Day;
 };
