@@ -1,9 +1,9 @@
 import module from "./calendar.module.css";
 
-import { DateCard } from "@/features/calendar";
+import { DateCard, DateHeader } from "@/features/calendar";
 
 import { useDate } from "@/shared/hooks";
-import { calendarSlice, validSameDate, validSameMonth } from "@/shared/utils";
+import { calendarSlice, validSameDate, validSameMonth, DAYS } from "@/shared/utils";
 
 export function Calendar() {
   const [date, calendar, rows, onPrev, onNext] = useDate();
@@ -16,6 +16,13 @@ export function Calendar() {
         <button onClick={onNext}>다음달</button>
         {/* To do: 버튼 컨트롤 features 분류 필요 */}
         <table>
+          <thead>
+            <tr>
+              {Object.keys(DAYS).map((_, day) => (
+                <DateHeader day={day} />
+              ))}
+            </tr>
+          </thead>
           <tbody>
             {rows.map((_, i) => (
               <tr className={module.row} key={i}>

@@ -1,1 +1,1 @@
-export type { DateCardProps } from "./types";
+export type { DateCardProps, DateHeaderProps } from "./types";

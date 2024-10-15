@@ -20,7 +20,7 @@ export function DateCard({
       className={module.card}
       style={{
         backgroundColor: isWeekend ? "#282826" : "",
-        color: isSameMonth ? "" : "#9e9e9d",
+        color: isSameMonth ? "" : "#575654",
       }}
       onClick={onClick}
     >
