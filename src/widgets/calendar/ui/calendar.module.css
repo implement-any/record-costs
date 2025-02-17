@@ -11,13 +11,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 5px;
-}
-
-.month {
-  font-size: 30px;
-  line-height: 30px;
-  color: #dddddd;
+  gap: 20px;
 }
 
 .wrapper > table {

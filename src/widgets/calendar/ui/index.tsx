@@ -1,6 +1,6 @@
 import module from "./calendar.module.css";
 
-import { DateCard, DateHeader } from "@/features/calendar";
+import { DateCard, DateControl, DateHeader } from "@/features/calendar";
 
 import { useDate } from "@/shared/hooks";
 import { calendarSlice, validSameDate, validSameMonth, DAYS } from "@/shared/utils";
@@ -11,9 +11,7 @@ export function Calendar() {
   return (
     <div className={module.container}>
       <div className={module.wrapper}>
-        <button onClick={onPrev}>저번달</button>
-        <h1 className={module.month}>{`${date.year}년 ${date.month}월`}</h1>
-        <button onClick={onNext}>다음달</button>
+        <DateControl onPrev={onPrev} date={`${date.year}년 ${date.month}월`} onNext={onNext} />
         {/* To do: 버튼 컨트롤 features 분류 필요 */}
         <table>
           <thead>

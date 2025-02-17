@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.date {
+  font-size: 30px;
+  line-height: 30px;
+  color: #dddddd;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.arrow.left {
+  background-image: url(/icons/left-arrow.svg);
+}
+
+.arrow.right {
+  background-image: url(/icons/right-arrow.svg);
+}

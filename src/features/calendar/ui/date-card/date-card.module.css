@@ -11,8 +11,8 @@
   position: absolute;
   right: 15px;
   top: 15px;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 15px;
+  line-height: 15px;
 }
 
 .mark {
@@ -22,13 +22,13 @@
 
 .mark::before {
   content: "";
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
   position: absolute;
-  top: 50%;
+  top: 49.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background-color: red;
+  background-color: rgb(213, 17, 17);
   z-index: -1;
 }
