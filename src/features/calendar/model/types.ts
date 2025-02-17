@@ -13,3 +13,9 @@ export type DateCardProps = {
 export type DateHeaderProps = {
   day: Day;
 };
+
+export type DateControlProps = {
+  onPrev: () => void;
+  date: string;
+  onNext: () => void;
+};
