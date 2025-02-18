@@ -6,12 +6,17 @@ import { useDate } from "@/shared/hooks";
 import { calendarSlice, validSameDate, validSameMonth, DAYS } from "@/shared/utils";
 
 export function Calendar() {
-  const [date, calendar, rows, onPrev, onNext] = useDate();
+  const [date, calendar, rows, onPrev, onNext, getToday] = useDate();
 
   return (
     <div className={module.container}>
       <div className={module.wrapper}>
-        <DateControl onPrev={onPrev} date={`${date.year}년 ${date.month}월`} onNext={onNext} />
+        <DateControl
+          onPrev={onPrev}
+          date={`${date.year}년 ${date.month}월`}
+          onNext={onNext}
+          getToday={getToday}
+        />
         {/* To do: 버튼 컨트롤 features 분류 필요 */}
         <table>
           <thead>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { getCalendar, Today } from "@/shared/utils";
 
-export function useDate(): [Today, Calendar[], number[], () => void, () => void] {
+export function useDate(): [Today, Calendar[], number[], () => void, () => void, () => void] {
   const [date, setDate] = useState(new Today());
   const [calendar, setCalendar] = useState<Calendar[]>([]);
 
@@ -15,6 +15,12 @@ export function useDate(): [Today, Calendar[], number[], () => void, () => void]
       month = 12;
     }
 
+    setDate((date) => ({ ...date, year, month }));
+    setCalendar(getCalendar(year, month));
+  };
+
+  const getToday = () => {
+    const { year, month } = new Today();
     setDate((date) => ({ ...date, year, month }));
     setCalendar(getCalendar(year, month));
   };
@@ -37,5 +43,5 @@ export function useDate(): [Today, Calendar[], number[], () => void, () => void]
     setCalendar(getCalendar(today.year, today.month));
   }, []);
 
-  return [date, calendar, Array(6).fill(0), onPrev, onNext];
+  return [date, calendar, Array(6).fill(0), onPrev, onNext, getToday];
 }

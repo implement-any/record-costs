@@ -18,4 +18,5 @@ export type DateControlProps = {
   onPrev: () => void;
   date: string;
   onNext: () => void;
+  getToday: () => void;
 };

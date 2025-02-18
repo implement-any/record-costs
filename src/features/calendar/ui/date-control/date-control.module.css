@@ -1,8 +1,18 @@
 .container {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 8px;
+}
+
+.leftSide {
+  display: flex;
+}
+
+.rightSide {
+  display: flex;
+  gap: 5px;
 }
 
 .date {
@@ -12,12 +22,18 @@
 }
 
 .arrow {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 20px;
   background-repeat: no-repeat;
   border: none;
-  background-color: transparent;
+  background-color: #595957;
   cursor: pointer;
+  background-position: 50%;
+  border-radius: 2px;
+}
+
+.arrow:active {
+  background-color: #717170;
 }
 
 .arrow.left {
@@ -26,4 +42,19 @@
 
 .arrow.right {
   background-image: url(/icons/right-arrow.svg);
+}
+
+.today {
+  font-size: 15px;
+  line-height: 15px;
+  padding: 0px 5px;
+  border: none;
+  border-radius: 2px;
+  background-color: #595957;
+  color: #dddddd;
+  cursor: pointer;
+}
+
+.today:active {
+  background-color: #717170;
 }
