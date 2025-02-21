@@ -12,24 +12,24 @@
 
 .rightSide {
   display: flex;
-  gap: 5px;
+  gap: 2px;
 }
 
 .date {
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 35px;
+  line-height: 35px;
   color: #dddddd;
 }
 
 .arrow {
-  width: 15px;
+  width: 20px;
   height: 20px;
   background-repeat: no-repeat;
   border: none;
   background-color: #595957;
   cursor: pointer;
   background-position: 50%;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .arrow:active {
